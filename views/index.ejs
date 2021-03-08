@@ -1,0 +1,918 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Software Services</title>
+    <link rel="icon" type="image/jpg" href="/pics/apexSymbol.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+
+    html {
+	    scroll-behavior: smooth;
+    }
+    body {
+        margin:0;
+        padding:0;
+        font-family: "Rubik","Roboto", Arial, Helvetica, sans-serif;
+        font-size: 13px;
+    }
+    img {
+        box-shadow: black 0px 0px 5px 0px;
+    }
+    section.anchor {
+        display: block;
+        position: relative;
+        top: 0;
+        visibility: hidden;
+    }
+    #topDiv{
+        background-image: url("/pics/headerPic.jpg");
+        background-position: center;
+        /* background-position:10px 200px;
+        z-index: -2000; */
+    }
+    #mobileHeader {
+        display: none;
+    }
+    #mobileMenu {
+        display: none;
+    }
+    header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color:black;
+        opacity: .85;
+        color: white;
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 15vh;
+    }
+    #headerLeft{
+        width: 40%;
+        font-size: 3em;
+    }
+    #headerCenter{
+        width: 50%;        
+    }
+    #headerCenterMax1300 {
+        display: none;
+    }
+    #hamburger {
+        
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburgerLine {
+        width: 35px;
+        height: 5px;
+        margin: 3px 0;
+        background-color: white;
+    }
+    nav{
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav ul {
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    nav li {
+        list-style: none;
+        font-size: 100%;
+        z-index: 100;
+        cursor: pointer;
+    }
+    nav ul li a {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        display: inline-block;
+        padding: 5px 10px;
+        position: relative;
+    }
+    nav ul li a:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    nav ul li a:hover:after { 
+        width: 80%; 
+        left: 10%; 
+    }
+    .freeConsultationButton{
+        border: 1px white solid;
+    }
+    .freeConsultationButton:hover{
+        border: 1px black solid;
+        background-color: white;
+    }
+    .freeConsultationButton a:hover{
+        color: black;
+        display: inline-block;
+    }
+    .freeConsultationButton a:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 45%;
+        position: absolute;
+        background: none;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    #headerRight{
+        width: 10%;
+        text-align: right;
+    }
+    main {
+        margin-bottom: 5vh;
+    }
+    #mainSectionOne{
+        background-color: black;
+        opacity: 0.85;
+        padding-left: 10%;
+        padding-right: 10%;
+        color: white;
+        font-size: 3.5em;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        height: 350px;
+        display: flex;
+        align-items: flex-end;
+    }
+    #mainSectionTwo{
+        background-color: black;
+        opacity: 0.85;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        color: white;
+        font-family: "Rubik", "Roboto", Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: flex-end;
+        text-transform: uppercase;
+    }
+    #mainSectionTwo span{
+        padding: 5px 10px;
+        margin: 20px 0px 20px 0px;
+        border: 1px white solid;
+    }
+    #mainSectionTwo span:hover {
+        border: none;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        border: 1px black solid;
+    }
+    #about, #services, #portfolio, #contact {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft{
+        padding-left: 10%;
+        padding-right: 5%;
+        width: 35%;
+        color: black;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        justify-content: flex-start;
+        font-size: 1.5em;
+    }
+    #servicesRight {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        justify-content: flex-start;
+        font-size: 1.5em;
+    }
+    #servicesMax1000 {
+        display: none;
+    }
+    #aboutRight, #servicesRight, #portfolioRight {
+        justify-content: flex-end;
+        width: 35%;
+        padding-left: 5%;
+        padding-right: 10%;
+        
+    }
+    #aboutRight img, #servicesRight img, #servicesLeft img, #portfolioRight img, #contactRight img {
+        width: 100%;
+        height: auto;
+    }
+    #aboutLeft a, #servicesLeft a, #servicesRight a, #portfolioLeft a {
+        color:blue;
+        text-transform: none;
+        display: inline;            
+    }
+    #aboutLeft a:hover, #servicesLeft a:hover, #servicesRight a:hover, #portfolioLeft a:hover {
+        color:blue;
+        text-transform: none;
+        text-decoration: underline;
+        display: inline;            
+    }
+    #aboutLeft span, #servicesRight span, #portfolioLeft span, #contact span {
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding-bottom: 15px;
+    }
+    #portfolioColtonCommercial {
+        cursor: pointer;
+    }
+
+    #portfolioColtonCommercial:hover {
+        box-shadow: none;
+    }
+    #contactBlock {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10%;
+        padding-right:10%;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        text-align: center;
+        padding-top: 40px;
+    }
+    #freeConsultationTitle {
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding-bottom: 15px;
+    }
+    input[type=submit] {
+        -webkit-border-radius:0px;   
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    .form__input, .form__textarea {
+        /* font-size: 16px; */
+        opacity: 1;
+        border: 1px solid #E6E6E6;
+        border-radius: 0;
+        position: relative;
+        width: 100%;
+        padding: 21px 55px 19px 23px;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 20px) center;
+        z-index: 2;
+        color:black;
+    }
+    #contact-submit-btn{
+        opacity: 1;
+        border: 1px solid #E6E6E6;
+        border-radius: 0;
+        width: 100%;
+        padding: 20px 0px;
+        background-color: black;
+        color:white;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    }
+    #contact-submit-btn:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+    #contactRight {
+        width: 35%;
+        padding-left: 5%;
+        padding-right: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        flex-direction: column;
+    } 
+    #contactRight span {
+        text-transform: none;
+        font-size: 1.5em;
+        font-weight: normal;
+    }    
+    footer {
+        height: 10vh;
+        background-color: black;
+        color: white;
+        font-family: "Rubik","Roboto", Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        display: flex;
+    }
+    #footerLeft{
+        width: 50%;
+        padding-left: 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #footerLeft a {
+        padding-left: 0;
+        text-transform: none;
+        color: white;
+        text-decoration: none;
+    }
+    #footerLeft a:hover {
+        color: grey;
+    }
+    #footerRight{
+        width: 50%;
+        padding-right: 10%;
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 1440px) {
+        #headerCenter {
+            display: none;
+        }
+        #headerRight {
+            display: none;
+        }
+        #headerLeft {
+            width: 40%;
+        }
+        #headerCenterMax1300{
+            display: block;
+            width: 60%;
+            text-align: right;
+            opacity: .85;
+        }
+    }
+
+    @media screen and (max-width: 1365px) {
+        #mainSectionOne {
+            font-size: 3em;
+        }
+        header {
+        }
+        #headerLeft {
+            font-size: 2.5em;
+        }
+        
+        
+    }
+    
+    @media screen and (max-width: 1200px) {
+        header, #mainSectionOne, #mainSectionTwo {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        #aboutLeft, #servicesLeft,#portfolioLeft, #contactLeft, #footerLeft {
+            padding-left: 5%;
+            flex-grow: 1;
+        }
+        #aboutRight, #servicesRight, #portfolioRight, #contactRight, #footerRight {
+            padding-right: 5%;
+            flex-grow: 1;
+        }
+    }
+
+    @media screen and (max-width: 1070px) {
+        main {
+            margin-bottom: 0;
+        }
+        #headerLeft {
+            font-size: 2em;
+            width: 35%;
+        }
+        #headerCenterMax1300 {
+            width: 65%;
+        }
+        #about, #services, #portfolio, #contact {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft {
+            width: 90%;
+            text-align: justify;
+            
+        }
+        #aboutLeft, #portfolioLeft {
+            padding-bottom: 20px;
+        }
+        #aboutRight, #portfolioRight {
+            width: 90%;
+            padding-bottom: 20px;
+        }
+        #services {
+            display: none;
+        }
+        #servicesMax1000 {
+            display: block;
+        }
+        #servicesRight {
+            width: 90%;
+            padding-bottom: 20px;
+            text-align: justify;
+        }
+        #contactRight {
+            width: 90%;
+            padding-bottom: 20px;
+        }
+        #contactBlock {
+            padding-top: 0px;
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        footer {
+            flex-direction: column;
+            padding-top: 20px;
+
+            padding-bottom: 20px;
+        }
+        #footerLeft {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-bottom: 20px;
+            width: 80%;
+            justify-content: center;
+        }
+        #footerRight {
+            padding-left: 10%;
+            padding-right: 10%;
+            width: 80%;
+            justify-content: center;
+        }
+    }
+
+    
+    @media screen and (max-width: 1000px) {
+        header {
+            height: 9vh;
+            padding-top: 20px;
+        }
+        #headerLeft, #headerCenter, #headerRight, #headerCenterMax1300 {
+            display: none;
+        }
+        #mobileHeader {
+            display: block;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        #mobileHeaderLeft {
+            font-size: 3em;
+        }
+        #mobileHeaderRight {
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        #mobileHeaderRight nav {
+            display: none;
+        }
+        
+        #mobileHeaderRight nav ul {
+            flex-direction: column;
+            text-align: right;
+            margin: 0;
+        }
+
+        #mobileHeaderRight nav ul li {
+            
+        }
+
+        #mobileHeaderRight nav ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            padding: 0;
+            position: relative;
+        }
+        
+        #mobileHeaderRight nav ul li a:after {
+            background: none;
+        }
+
+        #mobileHeaderRight {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        #mainSectionOne {
+            height: 200px;
+        }
+
+        #mobileMenu {
+            background: black;
+            opacity: 0.85;
+            list-style: none;
+            text-align: right;
+            padding-right: 5%;
+            margin: 0;
+        }
+
+        #mobileMenu li {
+            padding-bottom: 10px;
+        }
+
+        #mobileMenuLiHome {
+            padding-top: 20px;
+        }
+        
+        #mobileMenu li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        #MobileHeaderLeft {
+            font-size: 2.5em;
+        }
+        #mainSectionOne {
+            font-size: 2em;
+        }
+        #aboutLeft, #servicesRight, #portfolioLeft {
+            font-size: 1.25em;
+        }
+        #contact-submit-btn {
+            /* height: 50px;
+            border-radius: 0px;
+             /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+            /* -webkit-border-radius: 0px;  */
+
+            /* Firefox 1-3.6 */
+            /* -moz-border-radius: 0px; 
+
+            /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+            /* border-radius: 0px;  */ */ */
+        }
+    }
+
+    @media screen and (max-width: 520px){
+        #mobileHeaderLeft {
+            font-size: 2.25em;
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        #mobileHeaderLeft {
+            font-size: 2em;
+        }
+        #mainSectionOne {
+            font-size: 1.5em;
+        }
+    }
+
+</style>
+<body>
+       
+        
+    <section class="anchor" id="homeAnchor"></section>
+
+    <div id="topDiv">
+
+        <header>
+
+            <section id="mobileHeader">
+                <section id="mobileHeaderLeft">
+                    Apex Software Services
+                </section>
+                <section id="mobileHeaderRight">
+                    <section id="hamburger">
+                        <span class="hamburgerLine"></span>
+                        <span class="hamburgerLine"></span>
+                        <span class="hamburgerLine"></span>
+                    </section>
+                    
+                </section>
+            </section>
+            
+
+
+            <section id="headerLeft">
+                Apex Software Services
+            </section>
+            <section id="headerCenter">
+                <nav>
+                    <ul>
+                        <li><a href="https://apexsoftwareservices.com">Home</a></li>
+                        <li><a href="#aboutAnchor">About</a></li>
+                        <li><a href="#servicesAnchor">Services</a></li>
+                        <li><a href="#portfolioAnchor">Portfolio</a></li>
+                        <li class="freeConsultationButton"><a href="#contactAnchor">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="headerRight">
+                (415) 574-5567
+            </section>
+            <section id="headerCenterMax1300">
+                <nav>
+                    <ul>
+                        <li><a href="https://apexsoftwareservices.com">Home</a></li>
+                        <li><a href="#aboutAnchor">About</a></li>
+                        <li><a href="#servicesAnchor">Services</a></li>
+                        <li><a href="#portfolioAnchor">Portfolio</a></li>
+                        <li class="freeConsultationButton"><a href="#contactAnchor">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>  
+
+        
+            <ul id="mobileMenu">
+                <li id="mobileMenuLiHome"><a href="https://apexsoftwareservices.com">Home</a></li>
+                <li><a href="#aboutAnchor">About</a></li>
+                <li><a href="#servicesAnchor">Services</a></li>
+                <li><a href="#portfolioAnchor">Portfolio</a></li>
+                <li><a href="#contactAnchor">Free Consultation</a></li>
+            </ul>
+        
+        
+        <main>
+        <section id="mainSectionOne">
+            I build websites and help businesses grow.
+        </section>
+        <section id="mainSectionTwo">
+                <nav>
+                <ul style="padding:0">
+                    <li class="freeConsultationButton">
+                        <a href="#contactAnchor">Free Consultation</a>
+                    </li>
+                </ul>
+                </nav>
+        </section>
+        </main>
+    </div>
+    
+    <section class="anchor" id="aboutAnchor"></section>
+    <section id="about">
+        <section id="aboutLeft">
+            <span>
+                About Me
+            </span>
+            I'm the son of a carpenter.  At a young age I learned how to build things and I also gained the street smarts it takes to make a profit.  I specialize in helping blue collar businesses be the best at what they do. <a href="#contactAnchor">Contact me for a free consultation.</a>
+        </section>
+        <section id="aboutRight">
+            <img src="pics/aboutMePic.jpg">
+        </section>
+    </section>
+
+    <section class="anchor" id="servicesAnchor"></section>
+    <section id="services">
+        <section id="servicesLeft">
+            <img src="pics/servicesPic.jpg">
+        </section>
+        <section id="servicesRight">
+            <span>
+                Services
+            </span>
+            Hard working Americans are the backbone of this great nation and we grow stonger by working together.  My services include website development, search engine optimization, and monthly support. <a href="#contactAnchor">Contact me for a free consultation.</a>
+        </section>
+    </section>
+    <section id="servicesMax1000">
+        <section id="servicesRight">
+            <span>
+                Services
+            </span>
+            Hard working Americans are the backbone of this great nation and we grow stonger by working together.  My services include website development, search engine optimization, and monthly support. <a href="#contactAnchor">Contact me for a free consultation.</a>
+        </section>
+        <section id="servicesLeft">
+            <img src="pics/servicesPic.jpg">
+        </section>
+    </section>
+
+    <section class="anchor" id="portfolioAnchor"></section>
+    <section id="portfolio">
+        <section id="portfolioLeft">
+            <span>
+                Portfolio
+            </span>
+            My work spans multiple industries and I'm proud to call each one of my clients a friend.  Click on a business to jump to their website. <a href="#contactAnchor">Contact me for a free consultation.</a>
+        </section>
+        <section id="portfolioRight">
+            <img id="portfolioColtonCommercial" src="pics/portfolioColtonCommercial.jpg">
+        </section>
+    </section>
+    
+    <section class="anchor" id="contactAnchor"></section>
+    <span id="contactBlock">
+        <span id="freeConsultationTitle">
+            Free Consultation
+        </span>
+        <span id="freeConsultationText">
+            Let's talk!  Contact me anytime and I will get back to you within 24 hours!
+        </span>
+    </span>
+    <section id="contact">
+        
+        <section id="contactLeft">
+            
+            
+            <form id="contact-form" class="form" method="post">
+                <span class="form__input-wrapper form__input-wrapper--name">
+                    <input class="form__input form__input--name hf-validated hf-invalid" name="name" id="name" type="text" placeholder="Your name *" required="" pattern="^\S[A-Za-z0-9 ]{2,}$" aria-invalid="true"> 
+                </span>
+                <span class="form__input-wrapper form__input-wrapper--company">
+                    <input class="form__input form__input--company" id="company" name="company" type="text" placeholder="Company">
+                </span>
+                <div class="form__group">
+                    <span class="form__input-wrapper form__input-wrapper--email">
+                        <input class="form__input form__input--email hf-validated hf-invalid" name="email" id="email" type="email" placeholder="E-mail address *" required="" aria-invalid="true"> 
+                    </span>
+                    <span class="form__input-wrapper form__input-wrapper--phone">
+                        <input class="form__input form__input--phone" id="tel" name="tel" type="text" placeholder="Phone number *" required="" pattern="\d*" minlength="9">
+                    </span>
+                </div>
+                <span class="form__input-wrapper form__input-wrapper--text">
+                    <textarea class="form__textarea" id="message" name="message" placeholder="Message"></textarea>
+                </span>
+                
+                <input id="contact-submit-btn" type="submit" value="Send message">
+                
+            </form>
+        </section>
+        
+        <section id="contactRight">
+            <span>Apex Software Services</span>
+            <span>Aaron Sadino</span>
+            <span>(415) 574 - 5567</span>
+            <span>aaron@apexsoftwareservices.com</span>
+        </section>
+    </section>
+   
+    <footer>
+        <section id="footerLeft">
+            <a href="privacyPolicy" target="_blank">
+                Privacy Policy    
+            </a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="termsAndConditions" target="_blank">
+                Terms Of Use
+            </a>
+        </section>
+        <section id="footerRight">
+            &#169;Apex Software Services&nbsp;&nbsp;&nbsp;(415) 574 - 5567
+        </section>
+    </footer>
+
+    <script>
+
+
+
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+        }
+
+        //Open the portfolio company
+        const portfolioColtonCommercial = document.getElementById('portfolioColtonCommercial');
+        const openPortfolioColtonCommercial = () => {
+            window.open("https://www.coltoncommercialsf.com", "_blank");
+        }
+        portfolioColtonCommercial.addEventListener("click", openPortfolioColtonCommercial);
+
+        //send the contact form info when the user sends a message
+        const contactForm = document.getElementById("contact-form");
+
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault(); 
+            let name = contactForm.name.value.trim();
+            let company = contactForm.company.value.trim();
+            let email = contactForm.email.value.trim();
+            let telephone = contactForm.tel.value.trim();
+            let message = contactForm.message.value.trim();
+
+            let formData = {
+                name,
+                company,
+                email,
+                telephone,
+                message
+            }
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', '/');
+            xhr.setRequestHeader('content-type', 'application/json');
+            xhr.onload = function(){
+                if(xhr.readyState == 4){
+                    alert('Thank you for contacting me!  I will respond to your email within 24 hours.  Please feel free to contact me by phone at (415) 574 - 5567 if you need immediate assistance.  Have a good day!');
+                    contactForm.name.value = '';
+                    contactForm.company.value = '';
+                    contactForm.email.value = '';
+                    contactForm.tel.value = '';
+                    contactForm.message.value = '';
+                } else {
+                    alert('Something went wrong');
+                }
+            }
+            xhr.send(JSON.stringify(formData));
+
+
+            // const transporter = nodemailer.createTransport({
+            //     service: 'gmail',
+            //     auth: {
+            //         user: 'aaronsadino@gmail.com',
+            //         pass: 'Snowghost@12345'
+            //     }
+            // })
+
+            // const mailOptions = {
+            //     from: 'aaron@apexsoftwareservices.com',
+            //     to: 'aaronsadino@gmail.com',
+            //     subject: 'Nodemailer Test',
+            //     text: 'plain text'
+            // }
+
+            // transporter.sendMail(mailOptions, (error, info) => {
+            //     if(error){
+            //     console.log(error);
+            //     // res.send('error');
+            //     } else {
+            //     console.log('Email sent');
+            //     // res.send('success');
+            //     }
+            // })
+
+            // console.log(formData);
+
+            // let xhr = new XMLHttpRequest();
+
+            // xhr.addEventListener('readystatechange', () => {
+            //     console.log(xhr.readyState);
+            // })
+            
+            // xhr.open('POST','/');
+            // xhr.setRequestHeader('content-type', 'application/json');
+            
+            // xhr.onload = function(){
+            //     console.log(xhr.responseText);
+            //     if(xhr.responseText == 'success'){
+            //         alert('email sent');
+            //         name.value = '';
+            //         company.value = '';
+            //         email.value = '';
+            //         telephone.value = '';
+            //         message.value = '';
+            //     } else {
+            //         alert('Something went wrong');
+            //     }
+            // }
+
+            // xhr.send(JSON.stringify(formData));
+
+        });
+        
+
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.getElementById("hamburger");
+        const mainSectionOne = document.getElementById("mainSectionOne");
+
+        mobileMenu.style.display = "none";
+
+        hamburger.addEventListener("click", () => {
+                // hamburger.style.display = "none";
+                if(mobileMenu.style.display === "none"){
+                    mobileMenu.style.display = "block";
+                    mainSectionOne.style.height = "100px";
+                } else {
+                    mobileMenu.style.display = "none";
+                    mainSectionOne.style.height = "200px";
+                }
+            })
+        
+    </script>
+
+</body>
+
+</html>
