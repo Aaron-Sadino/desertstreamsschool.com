@@ -78,6 +78,11 @@ router.get('/termsAndConditions', function(req, res, next) {
 });
 
 
+router.get('/test', (req, res) => {
+  res.render('test');
+})
+
+
 
 
 

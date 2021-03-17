@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Software Services</title>
-    <link rel="icon" type="image/jpg" href="/pics/apexSymbol.png">
+    <title>Desert Streams School</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -21,8 +20,9 @@
     body {
         margin:0;
         padding:0;
-        font-family: "Rubik","Roboto", Arial, Helvetica, sans-serif;
+        font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
         font-size: 13px;
+        background-color: grey;
     }
     img {
         box-shadow: black 0px 0px 5px 0px;
@@ -33,9 +33,16 @@
         top: 0;
         visibility: hidden;
     }
+
+    #wrapper{
+        max-width: 1280px;
+        margin: 0 auto;
+        background-color: white;
+    }
     #topDiv{
         background-image: url("/pics/headerPic.jpg");
         background-position: center;
+        height: 600px;
         /* background-position:10px 200px;
         z-index: -2000; */
     }
@@ -46,22 +53,25 @@
         display: none;
     }
     header{
+        background-color: black;
+        opacity: .7;
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color:black;
-        opacity: .85;
         color: white;
+        font-weight: bold;
         padding-left: 10%;
         padding-right: 10%;
-        height: 15vh;
+        height: 100px; 
     }
     #headerLeft{
-        width: 40%;
-        font-size: 3em;
+        width: 35%;
+        font-family: "Crimson Text", Arial, Helvetica, sans-serif;
+        font-size: 2.5em;
     }
     #headerCenter{
-        width: 50%;        
+        width: 65%;
+        font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;        
     }
     #headerCenterMax1300 {
         display: none;
@@ -100,8 +110,12 @@
         display: inline-block;
         padding: 5px 10px;
         position: relative;
+        font-size: 1em;
     }
-    nav ul li a:after {    
+    nav ul li a:hover {
+        color: goldenrod;
+    }
+    /* nav ul li a:after {    
         background: none repeat scroll 0 0 transparent;
         bottom: 0;
         content: "";
@@ -116,7 +130,7 @@
     nav ul li a:hover:after { 
         width: 80%; 
         left: 10%; 
-    }
+    } */
     .freeConsultationButton{
         border: 1px white solid;
     }
@@ -141,27 +155,31 @@
         width: 0;
     }
     #headerRight{
-        width: 10%;
+        display: none;
         text-align: right;
     }
     main {
         margin-bottom: 5vh;
     }
     #mainSectionOne{
-        background-color: black;
-        opacity: 0.85;
-        padding-left: 10%;
-        padding-right: 10%;
+        
         color: white;
-        font-size: 3.5em;
-        font-family: "Montserrat", Arial, Helvetica, sans-serif;
-        height: 350px;
+        font-size: 2.5em;
+        font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        height: 600px;
         display: flex;
         align-items: flex-end;
+        text-shadow: 2px 2px 5px black;
+        justify-content: center;
+        align-items: center;
     }
-    #mainSectionTwo{
-        background-color: black;
-        opacity: 0.85;
+    #mainSectionOneText{
+        width:50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    /* #mainSectionTwo{
         padding-left: 10%;
         padding-right: 10%;
         padding-bottom: 20px;
@@ -183,15 +201,15 @@
         color: black;
         cursor: pointer;
         border: 1px black solid;
-    }
-    #about, #services, #portfolio, #contact {
+    } */
+    #about, #services, #portfolio, #contact, #donate {
         padding-top: 20px;
         padding-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft{
+    #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft, #donateLeft{
         padding-left: 10%;
         padding-right: 5%;
         width: 35%;
@@ -208,14 +226,14 @@
     #servicesMax1000 {
         display: none;
     }
-    #aboutRight, #servicesRight, #portfolioRight {
+    #aboutRight, #servicesRight, #portfolioRight, #donateRight {
         justify-content: flex-end;
         width: 35%;
         padding-left: 5%;
         padding-right: 10%;
         
     }
-    #aboutRight img, #servicesRight img, #servicesLeft img, #portfolioRight img, #contactRight img {
+    #aboutRight img, #servicesRight img, #servicesLeft img, #portfolioRight img, #contactRight img, #donateRight img {
         width: 100%;
         height: auto;
     }
@@ -296,8 +314,8 @@
         cursor: pointer;
     }
     #contactRight {
-        width: 35%;
-        padding-left: 5%;
+        width: 80%;
+        padding-left: 10%;
         padding-right: 10%;
         display: flex;
         align-items: center;
@@ -342,6 +360,27 @@
         align-items: center;
     }
 
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
+        box-shadow: 0 0 10px #000;
+    }
+    #contactRight span{
+        font-weight: bold;
+    }
+
     @media screen and (max-width: 1440px) {
         #headerCenter {
             display: none;
@@ -356,7 +395,7 @@
             display: block;
             width: 60%;
             text-align: right;
-            opacity: .85;
+            opacity: 1;
         }
     }
 
@@ -378,13 +417,18 @@
             padding-left: 5%;
             padding-right: 5%;
         }
-        #aboutLeft, #servicesLeft,#portfolioLeft, #contactLeft, #footerLeft {
+        #aboutLeft, #servicesLeft,#portfolioLeft, #donateLeft, #contactLeft, #footerLeft {
             padding-left: 5%;
             flex-grow: 1;
         }
-        #aboutRight, #servicesRight, #portfolioRight, #contactRight, #footerRight {
+        #aboutRight, #servicesRight, #portfolioRight, #donateRight, #contactRight, #footerRight {
             padding-right: 5%;
             flex-grow: 1;
+        }
+        .videoWrapper iframe {
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
         }
     }
 
@@ -399,22 +443,22 @@
         #headerCenterMax1300 {
             width: 65%;
         }
-        #about, #services, #portfolio, #contact {
+        #about, #services, #portfolio, #contact, #donate {
             padding-top: 40px;
             padding-bottom: 20px;
             display: flex;
             align-items: center;
             flex-direction: column;
         }
-        #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft {
+        #aboutLeft, #servicesLeft, #portfolioLeft, #contactLeft, #donateLeft {
             width: 90%;
             text-align: justify;
             
         }
-        #aboutLeft, #portfolioLeft {
+        #aboutLeft, #portfolioLeft, #donateLeft {
             padding-bottom: 20px;
         }
-        #aboutRight, #portfolioRight {
+        #aboutRight, #portfolioRight, #donateRight {
             width: 90%;
             padding-bottom: 20px;
         }
@@ -437,12 +481,25 @@
             padding-top: 0px;
             text-align: center;
         }
+        #donateLeft {
+            padding-left: 5%;
+        }
+        #donateRight {
+            padding-right: 5%;
+        }
+    }
+    @media screen and (max-width:1001px) and (min-width: 1069){
+        #mobileHeader{
+            display: none;
+        }
+        #mobileMenu {
+            display: none;
+        }
     }
     @media screen and (max-width: 1000px) {
         footer {
             flex-direction: column;
             padding-top: 20px;
-
             padding-bottom: 20px;
         }
         #footerLeft {
@@ -508,9 +565,9 @@
             position: relative;
         }
         
-        #mobileHeaderRight nav ul li a:after {
+        /* #mobileHeaderRight nav ul li a:after {
             background: none;
-        }
+        } */
 
         #mobileHeaderRight {
             display: flex;
@@ -519,12 +576,10 @@
         }
 
         #mainSectionOne {
-            height: 200px;
+            /* height: 200px; */
         }
 
         #mobileMenu {
-            background: black;
-            opacity: 0.85;
             list-style: none;
             text-align: right;
             padding-right: 5%;
@@ -547,6 +602,10 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+
+        #mobileMenu li a:hover {
+            color: goldenrod;
+        }
     }
 
     @media screen and (max-width: 680px) {
@@ -556,7 +615,7 @@
         #mainSectionOne {
             font-size: 2em;
         }
-        #aboutLeft, #servicesRight, #portfolioLeft {
+        #aboutLeft, #servicesRight, #portfolioLeft, #donateLeft {
             font-size: 1.25em;
         }
         #contact-submit-btn {
@@ -588,198 +647,246 @@
         }
     }
 
+    
+
+</style>
+<style>
+        
+    
 </style>
 <body>
-       
+
+    <div id="wrapper">
         
-    <section class="anchor" id="homeAnchor"></section>
+        <section class="anchor" id="homeAnchor"></section>
 
-    <div id="topDiv">
+        <div id="topDiv">
 
-        <header>
+            <header>
 
-            <section id="mobileHeader">
-                <section id="mobileHeaderLeft">
-                    Apex Software Services
-                </section>
-                <section id="mobileHeaderRight">
-                    <section id="hamburger">
-                        <span class="hamburgerLine"></span>
-                        <span class="hamburgerLine"></span>
-                        <span class="hamburgerLine"></span>
+                <section id="mobileHeader">
+                    <section id="mobileHeaderLeft">
+                        Desert Streams School
                     </section>
-                    
+                    <section id="mobileHeaderRight">
+                        <section id="hamburger">
+                            <span class="hamburgerLine"></span>
+                            <span class="hamburgerLine"></span>
+                            <span class="hamburgerLine"></span>
+                        </section>
+                        
+                    </section>
+                </section>
+                
+
+
+                <section id="headerLeft">
+                    Desert Streams School
+                </section>
+                <section id="headerCenter">
+                    <nav>
+                        <ul>
+                            <li><a href="https://desertstreamsschool.com">Home</a></li>
+                            <li><a href="#aboutAnchor">About</a></li>
+                            <li><a href="#galleryAnchor">Gallery</a></li>
+                            <!-- <li><a href="#staffAnchor">Staff</a></li> -->
+                            <!-- <li><a href="#facilityAnchor">Facility</a></li> -->
+                            <!-- <li><a href="#graduatesAnchor">Graduates</a></li> -->
+                            <li><a href="#donateAnchor">Donate</a></li>
+                            <li><a href="#contactAnchor">Contact</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section id="headerRight">
+                    (415) 574-5567
+                </section>
+                <section id="headerCenterMax1300">
+                    <nav>
+                        <ul>
+                            <li><a href="https://desertstreamsschool.com">Home</a></li>
+                            <li><a href="#aboutAnchor">About</a></li>
+                            <li><a href="#galleryAnchor">Gallery</a></li>
+                            <!-- <li><a href="#staffAnchor">Staff</a></li> -->
+                            <!-- <li><a href="#facilityAnchor">Facility</a></li> -->
+                            <!-- <li><a href="#graduatesAnchor">Graduates</a></li> -->
+                            <li><a href="#donateAnchor">Donate</a></li>
+                            <li><a href="#contactAnchor">Contact</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </header>  
+
+            
+                <ul id="mobileMenu">                    
+                    <li id="mobileMenuLiHome"><a href="https://desertstreamsschool.com">Home</a></li>
+                    <li><a href="#aboutAnchor">About</a></li>
+                    <li><a href="#galleryAnchor">Gallery</a></li>
+                    <!-- <li><a href="#staffAnchor">Staff</a></li> -->
+                    <!-- <li><a href="#facilityAnchor">Facility</a></li> -->
+                    <!-- <li><a href="#graduatesAnchor">Graduates</a></li> -->
+                    <li><a href="#donateAnchor">Donate</a></li>
+                    <li><a href="#contactAnchor">Contact</a></li>
+                </ul>
+            
+            
+            <main>
+            <section id="mainSectionOne">
+                <section id="mainSectionOneText">
+                    We are dedicated to providing education and oppurtunities to the children of our community.
                 </section>
             </section>
+            <!-- <section id="mainSectionTwo">
+                    <nav>
+                    <ul style="padding:0">
+                        <li class="freeConsultationButton">
+                            <a href="#contactAnchor">Free Consultation</a>
+                        </li>
+                    </ul>
+                    </nav>
+            </section> -->
+            </main>
+        </div>
+        
+        <section class="anchor" id="aboutAnchor"></section>
+        <section id="about">
+            <section id="aboutLeft">
+                <!-- <span>
+                    About Us
+                </span> -->
+                Welcome to Desert Streams School. We are located in the Kibera slums of Nairobi, Kenya. We are dedicated to providing education and oppurtunities to the children of our community. We began operations in 2005 and have continued to grow since then. Our origin story is one of hope and hard work in the face of crushing poverty and a series of unbelievable challenges. We started our school with a generous donation of $40 from a visiting missionary who believed in our dream. Our school started as a single room and has blossomed into a pillar of our community.
+                <!-- <span>
+                    Donate
+                </span> -->
+            </section>
+            <section id="aboutRight">
+                <img src="pics/judyHomepage.jpg">            
+            </section>
+        </section>
+
+        <section class="anchor" id="servicesAnchor"></section>
+        <section id="services">
+            <section id="servicesLeft">
+                <img src="pics/boysHomepage.jpg">
+            </section>
+            <section id="servicesRight">
+                <!-- <span>
+                    Services
+                </span> -->
+                Unfortunately, our mission to provide education to the children living in the slums of Kibera is in serious trouble. In January of 2017, after more than a decade of building our school piece by piece, we suffered a massive fire that decimated our school. What wasn't destroyed by the fire was stolen by looters. Despite this tragedy we persevered. We came together as a community and cleaned the school grounds of the ruins of our beautiful school. We set up temporary classrooms and resumed operations.
+            </section>
+        </section>
+        <section id="servicesMax1000">
+            <section id="servicesRight">
+                <!-- <span>
+                    Services
+                </span> -->
+                Unfortunately, our mission to provide education to the children living in the slums of Kibera is in serious trouble. In January of 2017, after more than a decade of building our school piece by piece, we suffered a massive fire that decimated our school. What wasn't destroyed by the fire was stolen by looters. Despite this tragedy we persevered. We came together as a community and cleaned the school grounds of the ruins of our beautiful school. We set up temporary classrooms and resumed operations.
+            </section>
+            <section id="servicesLeft">
+                <img src="pics/boysHomepage.jpg">
+            </section>
+        </section>
+
+        <section class="anchor" id="portfolioAnchor"></section>
+        <section id="portfolio">
+            <section id="portfolioLeft">
+                <!-- <span>
+                    Portfolio
+                </span> -->
+                We have survived the last three years, but are facing a new challenge that may be the end of our crusade. We need to raise money to rebuild our school and comply with health and safety regulations. If we do not comply our school will be shut down and we will be forced to abandon our children to the slums of Kibera. We ask that anyone that is able to help us to please donate to our cause. Judy Oloo is our senior administrator and is happy to speak with anyone that has questions about our insitution or would like to make a donation. Please feel free to contact us at anytime by phone or email. Thank you.
+            </section>
+            <section id="portfolioRight">
+                <img src="pics/girlsHomepage.jpg">
+            </section>
+        </section>
+
+        
+        
+        <section class="videoWrapper">
+            <section id="galleryAnchor"></section>
+            <iframe src="https://www.youtube.com/embed/D523TM34FMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </section>
+
+        <section class="donate" id="donateAnchor"></section>
+        <section id="donate">
+            <section id="donateLeft">
+                <!-- <span>
+                    Portfolio
+                </span> -->
+                My name is Judy Oloo and I'm the senior administrator and founder of Desert Streams School. Members of the community and I created this school in the hopes of providing a better future for the children that live in the Kibera slumbs.  We are in need of new sources of funds to continue to serve the children of Kibera. Please help us keep our school open and our childrens hopes alive.  Please feel free to contact me at anytime by phone or email to arrange donations. Thank you. 
+            </section>
+            <section id="donateRight">
+                <img src="pics/judyDonate.jpg">
+            </section>
+        </section>
+        
+        <section class="anchor" id="contactAnchor"></section>
+        <span id="contactBlock">
+            <!-- <span id="freeConsultationTitle">
+                Contact
+            </span> -->
+            <span id="freeConsultationText">
+                Let's talk!  Contact me anytime and I will get back to you as soon as possible!
+            </span>
+        </span>
+        <section id="contact">
             
-
-
-            <section id="headerLeft">
-                Apex Software Services
+            <!-- <section id="contactLeft">
+                
+                
+                <form id="contact-form" class="form" method="post">
+                    <span class="form__input-wrapper form__input-wrapper--name">
+                        <input class="form__input form__input--name hf-validated hf-invalid" name="name" id="name" type="text" placeholder="Your name *" required="" pattern="^\S[A-Za-z0-9 ]{2,}$" aria-invalid="true"> 
+                    </span>
+                    <span class="form__input-wrapper form__input-wrapper--company">
+                        <input class="form__input form__input--company" id="company" name="company" type="text" placeholder="Company">
+                    </span>
+                    <div class="form__group">
+                        <span class="form__input-wrapper form__input-wrapper--email">
+                            <input class="form__input form__input--email hf-validated hf-invalid" name="email" id="email" type="email" placeholder="E-mail address *" required="" aria-invalid="true"> 
+                        </span>
+                        <span class="form__input-wrapper form__input-wrapper--phone">
+                            <input class="form__input form__input--phone" id="tel" name="tel" type="text" placeholder="Phone number *" required="" pattern="\d*" minlength="9">
+                        </span>
+                    </div>
+                    <span class="form__input-wrapper form__input-wrapper--text">
+                        <textarea class="form__textarea" id="message" name="message" placeholder="Message"></textarea>
+                    </span>
+                    
+                    <input id="contact-submit-btn" type="submit" value="Send message">
+                    
+                </form>
+            </section> -->
+            
+            <section id="contactRight">
+                <span>Desert Streams School</span>
+                <span>Judy Oloo</span>
+                <span>0789 844 846</span>
+                <span>0727 088 862</span>
+                <span>0722 440 782</span>
+                <span>dsskiberaslums@gmail.com</span>
+                <span>P.O. Box 29738-00202</span>
+                <span>Nairobi</span>
             </section>
-            <section id="headerCenter">
-                <nav>
-                    <ul>
-                        <li><a href="https://apexsoftwareservices.com">Home</a></li>
-                        <li><a href="#aboutAnchor">About</a></li>
-                        <li><a href="#servicesAnchor">Services</a></li>
-                        <li><a href="#portfolioAnchor">Portfolio</a></li>
-                        <li class="freeConsultationButton"><a href="#contactAnchor">Free Consultation</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <section id="headerRight">
-                (415) 574-5567
-            </section>
-            <section id="headerCenterMax1300">
-                <nav>
-                    <ul>
-                        <li><a href="https://apexsoftwareservices.com">Home</a></li>
-                        <li><a href="#aboutAnchor">About</a></li>
-                        <li><a href="#servicesAnchor">Services</a></li>
-                        <li><a href="#portfolioAnchor">Portfolio</a></li>
-                        <li class="freeConsultationButton"><a href="#contactAnchor">Free Consultation</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </header>  
-
-        
-            <ul id="mobileMenu">
-                <li id="mobileMenuLiHome"><a href="https://apexsoftwareservices.com">Home</a></li>
-                <li><a href="#aboutAnchor">About</a></li>
-                <li><a href="#servicesAnchor">Services</a></li>
-                <li><a href="#portfolioAnchor">Portfolio</a></li>
-                <li><a href="#contactAnchor">Free Consultation</a></li>
-            </ul>
-        
-        
-        <main>
-        <section id="mainSectionOne">
-            I build websites and help businesses grow.
         </section>
-        <section id="mainSectionTwo">
-                <nav>
-                <ul style="padding:0">
-                    <li class="freeConsultationButton">
-                        <a href="#contactAnchor">Free Consultation</a>
-                    </li>
-                </ul>
-                </nav>
-        </section>
-        </main>
+    
+        <footer>
+            <section id="footerLeft">
+                <a href="privacyPolicy" target="_blank">
+                    Privacy Policy    
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="termsAndConditions" target="_blank">
+                    Terms Of Use
+                </a>
+            </section>
+            <section id="footerRight">
+                &#169;Desert Streams School&nbsp;&nbsp;&nbsp;078-984-4846
+            </section>
+        </footer>
+
     </div>
-    
-    <section class="anchor" id="aboutAnchor"></section>
-    <section id="about">
-        <section id="aboutLeft">
-            <span>
-                About Me
-            </span>
-            I'm the son of a carpenter.  At a young age I learned how to build things and I also gained the street smarts it takes to make a profit.  I specialize in helping blue collar businesses be the best at what they do. <a href="#contactAnchor">Contact me for a free consultation.</a>
-        </section>
-        <section id="aboutRight">
-            <img src="pics/aboutMePic.jpg">
-        </section>
-    </section>
-
-    <section class="anchor" id="servicesAnchor"></section>
-    <section id="services">
-        <section id="servicesLeft">
-            <img src="pics/servicesPic.jpg">
-        </section>
-        <section id="servicesRight">
-            <span>
-                Services
-            </span>
-            Hard working Americans are the backbone of this great nation and we grow stonger by working together.  My services include website development, search engine optimization, and monthly support. <a href="#contactAnchor">Contact me for a free consultation.</a>
-        </section>
-    </section>
-    <section id="servicesMax1000">
-        <section id="servicesRight">
-            <span>
-                Services
-            </span>
-            Hard working Americans are the backbone of this great nation and we grow stonger by working together.  My services include website development, search engine optimization, and monthly support. <a href="#contactAnchor">Contact me for a free consultation.</a>
-        </section>
-        <section id="servicesLeft">
-            <img src="pics/servicesPic.jpg">
-        </section>
-    </section>
-
-    <section class="anchor" id="portfolioAnchor"></section>
-    <section id="portfolio">
-        <section id="portfolioLeft">
-            <span>
-                Portfolio
-            </span>
-            My work spans multiple industries and I'm proud to call each one of my clients a friend.  Click on a business to jump to their website. <a href="#contactAnchor">Contact me for a free consultation.</a>
-        </section>
-        <section id="portfolioRight">
-            <img id="portfolioColtonCommercial" src="pics/portfolioColtonCommercial.jpg">
-        </section>
-    </section>
-    
-    <section class="anchor" id="contactAnchor"></section>
-    <span id="contactBlock">
-        <span id="freeConsultationTitle">
-            Free Consultation
-        </span>
-        <span id="freeConsultationText">
-            Let's talk!  Contact me anytime and I will get back to you within 24 hours!
-        </span>
-    </span>
-    <section id="contact">
-        
-        <section id="contactLeft">
-            
-            
-            <form id="contact-form" class="form" method="post">
-                <span class="form__input-wrapper form__input-wrapper--name">
-                    <input class="form__input form__input--name hf-validated hf-invalid" name="name" id="name" type="text" placeholder="Your name *" required="" pattern="^\S[A-Za-z0-9 ]{2,}$" aria-invalid="true"> 
-                </span>
-                <span class="form__input-wrapper form__input-wrapper--company">
-                    <input class="form__input form__input--company" id="company" name="company" type="text" placeholder="Company">
-                </span>
-                <div class="form__group">
-                    <span class="form__input-wrapper form__input-wrapper--email">
-                        <input class="form__input form__input--email hf-validated hf-invalid" name="email" id="email" type="email" placeholder="E-mail address *" required="" aria-invalid="true"> 
-                    </span>
-                    <span class="form__input-wrapper form__input-wrapper--phone">
-                        <input class="form__input form__input--phone" id="tel" name="tel" type="text" placeholder="Phone number *" required="" pattern="\d*" minlength="9">
-                    </span>
-                </div>
-                <span class="form__input-wrapper form__input-wrapper--text">
-                    <textarea class="form__textarea" id="message" name="message" placeholder="Message"></textarea>
-                </span>
-                
-                <input id="contact-submit-btn" type="submit" value="Send message">
-                
-            </form>
-        </section>
-        
-        <section id="contactRight">
-            <span>Apex Software Services</span>
-            <span>Aaron Sadino</span>
-            <span>(415) 574 - 5567</span>
-            <span>aaron@apexsoftwareservices.com</span>
-        </section>
-    </section>
-   
-    <footer>
-        <section id="footerLeft">
-            <a href="privacyPolicy" target="_blank">
-                Privacy Policy    
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="termsAndConditions" target="_blank">
-                Terms Of Use
-            </a>
-        </section>
-        <section id="footerRight">
-            &#169;Apex Software Services&nbsp;&nbsp;&nbsp;(415) 574 - 5567
-        </section>
-    </footer>
 
     <script>
 
@@ -796,102 +903,49 @@
         }
 
         //Open the portfolio company
-        const portfolioColtonCommercial = document.getElementById('portfolioColtonCommercial');
-        const openPortfolioColtonCommercial = () => {
-            window.open("https://www.coltoncommercialsf.com", "_blank");
-        }
-        portfolioColtonCommercial.addEventListener("click", openPortfolioColtonCommercial);
+        // const portfolioColtonCommercial = document.getElementById('portfolioColtonCommercial');
+        // const openPortfolioColtonCommercial = () => {
+        //     window.open("https://www.coltoncommercialsf.com", "_blank");
+        // }
+        // portfolioColtonCommercial.addEventListener("click", openPortfolioColtonCommercial);
 
-        //send the contact form info when the user sends a message
-        const contactForm = document.getElementById("contact-form");
+        // //send the contact form info when the user sends a message
+        // const contactForm = document.getElementById("contact-form");
 
-        contactForm.addEventListener('submit', e => {
-            e.preventDefault(); 
-            let name = contactForm.name.value.trim();
-            let company = contactForm.company.value.trim();
-            let email = contactForm.email.value.trim();
-            let telephone = contactForm.tel.value.trim();
-            let message = contactForm.message.value.trim();
+        // contactForm.addEventListener('submit', e => {
+        //     e.preventDefault(); 
+        //     let name = contactForm.name.value.trim();
+        //     let company = contactForm.company.value.trim();
+        //     let email = contactForm.email.value.trim();
+        //     let telephone = contactForm.tel.value.trim();
+        //     let message = contactForm.message.value.trim();
 
-            let formData = {
-                name,
-                company,
-                email,
-                telephone,
-                message
-            }
+        //     let formData = {
+        //         name,
+        //         company,
+        //         email,
+        //         telephone,
+        //         message
+        //     }
 
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', '/');
-            xhr.setRequestHeader('content-type', 'application/json');
-            xhr.onload = function(){
-                if(xhr.readyState == 4){
-                    alert('Thank you for contacting me!  I will respond to your email within 24 hours.  Please feel free to contact me by phone at (415) 574 - 5567 if you need immediate assistance.  Have a good day!');
-                    contactForm.name.value = '';
-                    contactForm.company.value = '';
-                    contactForm.email.value = '';
-                    contactForm.tel.value = '';
-                    contactForm.message.value = '';
-                } else {
-                    alert('Something went wrong');
-                }
-            }
-            xhr.send(JSON.stringify(formData));
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('POST', '/');
+        //     xhr.setRequestHeader('content-type', 'application/json');
+        //     xhr.onload = function(){
+        //         if(xhr.readyState == 4){
+        //             alert('Thank you for contacting me!  I will respond to your email within 24 hours.  Please feel free to contact me by phone at (415) 574 - 5567 if you need immediate assistance.  Have a good day!');
+        //             contactForm.name.value = '';
+        //             contactForm.company.value = '';
+        //             contactForm.email.value = '';
+        //             contactForm.tel.value = '';
+        //             contactForm.message.value = '';
+        //         } else {
+        //             alert('Something went wrong');
+        //         }
+        //     }
+        //     xhr.send(JSON.stringify(formData));
 
-
-            // const transporter = nodemailer.createTransport({
-            //     service: 'gmail',
-            //     auth: {
-            //         user: 'aaronsadino@gmail.com',
-            //         pass: 'Snowghost@12345'
-            //     }
-            // })
-
-            // const mailOptions = {
-            //     from: 'aaron@apexsoftwareservices.com',
-            //     to: 'aaronsadino@gmail.com',
-            //     subject: 'Nodemailer Test',
-            //     text: 'plain text'
-            // }
-
-            // transporter.sendMail(mailOptions, (error, info) => {
-            //     if(error){
-            //     console.log(error);
-            //     // res.send('error');
-            //     } else {
-            //     console.log('Email sent');
-            //     // res.send('success');
-            //     }
-            // })
-
-            // console.log(formData);
-
-            // let xhr = new XMLHttpRequest();
-
-            // xhr.addEventListener('readystatechange', () => {
-            //     console.log(xhr.readyState);
-            // })
-            
-            // xhr.open('POST','/');
-            // xhr.setRequestHeader('content-type', 'application/json');
-            
-            // xhr.onload = function(){
-            //     console.log(xhr.responseText);
-            //     if(xhr.responseText == 'success'){
-            //         alert('email sent');
-            //         name.value = '';
-            //         company.value = '';
-            //         email.value = '';
-            //         telephone.value = '';
-            //         message.value = '';
-            //     } else {
-            //         alert('Something went wrong');
-            //     }
-            // }
-
-            // xhr.send(JSON.stringify(formData));
-
-        });
+        // });
         
 
         const mobileMenu = document.getElementById("mobileMenu");
@@ -904,12 +958,19 @@
                 // hamburger.style.display = "none";
                 if(mobileMenu.style.display === "none"){
                     mobileMenu.style.display = "block";
-                    mainSectionOne.style.height = "100px";
+                    mobileMenu.style.backgroundColor = "#000000";
+                    mobileMenu.style.opacity = "0.7";
+                    mainSectionOne.style.height = "200";
                 } else {
                     mobileMenu.style.display = "none";
-                    mainSectionOne.style.height = "200px";
+                    mainSectionOne.style.height = "600";
                 }
             })
+
+        window.addEventListener("resize", () => {
+            mobileMenu.style.display = "none";
+            mainSectionOne.style.height = "600";
+        })
         
     </script>
 
